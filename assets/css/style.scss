@@ -1,0 +1,379 @@
+// Variáveis com cores que remetem à tecnologia e sustentabilidade
+$cor-primaria: #4CAF50;          // Verde Principal (Sustentabilidade)
+$cor-secundaria: #00897B;        // Verde Água/Ciano (Tecnologia/Foco)
+$cor-fundo-claro: #F4F7F9;        // Cinza/Azul muito claro (Tecnologia Neutra)
+$cor-fundo-escuro: #2C3E50;      // Azul Marinho Escuro (Rodapé/Contraste)
+$cor-texto: #333333;
+$cor-texto-claro: #FFFFFF;
+$espacamento-base: 1.5rem;      // 24px (Medida Relativa REM)
+
+// Mixin para centralizar o contêiner principal
+@mixin container-base {
+    max-width: 1200px;
+    width: 90%; // Medida relativa
+    margin: 0 auto;
+}
+
+// Reset Básico
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: $cor-texto;
+    line-height: 1.6;
+    background-color: $cor-texto-claro;
+}
+
+// Classes base
+.container {
+    @include container-base;
+}
+
+.botao {
+    padding: $espacamento-base * 0.75 $espacamento-base * 1.5;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: background 0.3s;
+
+    &--primario {
+        background-color: $cor-primaria;
+        color: $cor-texto-claro;
+        border: 2px solid $cor-primaria;
+        &:hover { background-color: darken($cor-primaria, 10%); }
+    }
+    
+    &--secundario {
+        background-color: transparent;
+        color: $cor-primaria;
+        border: 2px solid $cor-primaria;
+        &:hover { background-color: rgba($cor-primaria, 0.1); }
+    }
+}
+
+.secao {
+    padding: $espacamento-base * 3 0; // Padding com medida relativa (REM)
+    text-align: center;
+}
+.subtitulo-secao {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: $espacamento-base * 2;
+}
+
+
+// --- CABEÇALHO ---
+.cabecalho {
+    background-color: $cor-fundo-claro;
+    padding: $espacamento-base * 0.5 0;
+    
+    &__conteudo {
+        display: flex; // Habilita Flexbox
+        justify-content: space-between; // Espaço entre logo/nav e botão
+        align-items: center;
+
+        .logo {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: $cor-secundaria;
+            text-decoration: none;
+        }
+
+        .menu {
+            list-style: none;
+            display: flex; // Menu interno: Flexbox
+            
+            li a {
+                text-decoration: none;
+                color: $cor-texto;
+                padding: $espacamento-base * 0.5 $espacamento-base;
+                margin: 0 $espacamento-base * 0.5;
+                transition: color 0.3s;
+                
+                &:hover { color: $cor-secundaria; }
+            }
+        }
+        
+        .cabecalho__navegacao {
+            margin-right: $espacamento-base;
+        }
+        
+        // Esconde o menu de navegação em telas menores (Mobile First)
+        .cabecalho__navegacao {
+            display: none;
+        }
+    }
+}
+
+// --- SEÇÃO HERO ---
+.secao--hero {
+    background-color: $cor-fundo-claro;
+    padding: $espacamento-base * 4 0;
+    
+    .hero__conteudo {
+        display: flex; // Alinha texto e imagem
+        align-items: center;
+        text-align: left;
+        flex-direction: column; // Inicia em coluna (Mobile)
+    }
+
+    .hero__texto {
+        padding: 0 $espacamento-base;
+        margin-bottom: $espacamento-base * 2;
+    }
+    
+    h1 {
+        font-family: 'Poppins', sans-serif;
+        font-size: 2.5rem;
+        color: $cor-texto;
+        margin-bottom: $espacamento-base;
+    }
+
+    .hero__botoes {
+        display: flex;
+        gap: $espacamento-base; // Espaçamento entre botões
+        margin-top: $espacamento-base;
+    }
+
+    .hero__imagem {
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+}
+
+// --- ESTATÍSTICAS ---
+.secao--estatisticas {
+    background-color: $cor-texto-claro;
+    padding: $espacamento-base * 2 0;
+    
+    .estatisticas__lista {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap; // Garante quebra de linha em telas pequenas
+    }
+
+    .estatistica {
+        flex-basis: 30%; // Cada item ocupa 30%
+        padding: $espacamento-base;
+        text-align: center;
+
+        h2 {
+            font-size: 2rem;
+            color: $cor-primaria;
+            margin-bottom: $espacamento-base * 0.25;
+        }
+        p {
+            color: #777;
+        }
+    }
+}
+
+// --- COMO FUNCIONA ---
+.secao--funciona {
+    background-color: $cor-fundo-claro;
+    
+    .funciona__blocos {
+        display: flex;
+        gap: $espacamento-base * 2;
+        flex-direction: column; // Inicia em coluna (Mobile)
+        text-align: left;
+    }
+    
+    .bloco {
+        flex-grow: 1; // Permite que cada bloco cresça
+        padding: $espacamento-base * 1.5;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+
+        &--doador {
+            background-color: #E6F0FF; // Azul claro
+        }
+        &--adquirente {
+            background-color: #E6FFF0; // Verde claro
+        }
+        
+        h3 {
+            font-size: 1.4rem;
+            margin-bottom: $espacamento-base;
+            color: $cor-secundaria;
+        }
+        
+        .lista-funciona {
+            padding: 0;
+            li {
+                margin-bottom: $espacamento-base * 0.5;
+            }
+        }
+    }
+}
+
+// --- PRODUTOS ---
+.secao--produtos {
+    .lista-cartoes {
+        display: flex;
+        gap: $espacamento-base * 1.5;
+        justify-content: center;
+        flex-wrap: wrap; // Permite quebra de linha
+    }
+
+    .cartao {
+        flex-basis: 300px; // Largura mínima para o cartão
+        max-width: 100%;
+        border: 1px solid #eee;
+        border-radius: 8px;
+        overflow: hidden; // Recorte da imagem
+        text-align: left;
+
+        img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        &__conteudo {
+            padding: $espacamento-base;
+            
+            h3 {
+                margin-bottom: $espacamento-base * 0.25;
+                font-weight: 700;
+            }
+            p {
+                margin-bottom: $espacamento-base;
+                font-size: 0.9rem;
+                color: #777;
+            }
+        }
+    }
+}
+
+// --- DEPOIMENTOS ---
+.secao--depoimentos {
+    background-color: $cor-fundo-claro;
+    
+    .lista-depoimentos {
+        display: flex;
+        justify-content: space-between;
+        gap: $espacamento-base;
+        flex-wrap: wrap;
+    }
+
+    .depoimento {
+        flex-basis: 30%; // Cada depoimento ocupa 30%
+        padding: $espacamento-base;
+        background-color: $cor-texto-claro;
+        border-left: 5px solid $cor-primaria;
+        border-radius: 4px;
+        text-align: left;
+
+        .avaliacao {
+            font-size: 1.5rem;
+            margin-bottom: $espacamento-base * 0.5;
+        }
+        .texto-depoimento {
+            font-style: italic;
+            margin-bottom: $espacamento-base;
+        }
+        small {
+            display: block;
+            color: $cor-secundaria;
+            font-weight: 600;
+        }
+    }
+}
+
+// --- CTA FINAL ---
+.secao--cta {
+    background-color: $cor-texto-claro;
+    
+    .cta__conteudo {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: $espacamento-base * 3 0;
+        
+        h2 {
+            font-size: 2rem;
+            margin-bottom: $espacamento-base;
+        }
+        p {
+            margin-bottom: $espacamento-base * 2;
+        }
+        
+        .cta__botoes {
+            display: flex;
+            justify-content: center;
+            gap: $espacamento-base;
+        }
+    }
+}
+
+// --- RODAPÉ ---
+.rodape {
+    background-color: $cor-fundo-escuro;
+    color: $cor-texto-claro;
+    padding: $espacamento-base * 2 0;
+    
+    .rodape__conteudo {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column; // Inicia em coluna (Mobile)
+        gap: $espacamento-base * 2;
+    }
+    
+    .rodape__info, .rodape__redes {
+        text-align: center; // Centraliza no mobile
+        h3, h4 {
+            font-family: 'Poppins', sans-serif;
+            margin-bottom: $espacamento-base * 0.5;
+        }
+    }
+}
+
+
+// --- RESPONSIVIDADE (Desktop - Acima de 768px) ---
+@media (min-width: 768px) {
+    
+    .cabecalho__conteudo {
+        .cabecalho__navegacao {
+            display: block; // Mostra o menu no Desktop
+        }
+    }
+    
+    .secao--hero {
+        .hero__conteudo {
+            flex-direction: row; // Muda para linha
+            justify-content: space-between;
+        }
+        .hero__texto {
+            flex-basis: 50%;
+            padding-right: $espacamento-base * 3;
+        }
+        .hero__imagem {
+            flex-basis: 40%;
+            text-align: right;
+        }
+    }
+    
+    .secao--funciona {
+        .funciona__blocos {
+            flex-direction: row; // Muda para linha
+        }
+    }
+    
+    .rodape {
+        .rodape__conteudo {
+            flex-direction: row; // Muda para linha
+            text-align: left;
+        }
+        .rodape__info, .rodape__redes {
+            text-align: left;
+        }
+    }
+}
