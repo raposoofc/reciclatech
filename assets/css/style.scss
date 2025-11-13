@@ -1,20 +1,17 @@
-// Variáveis com cores que remetem à tecnologia e sustentabilidade
-$cor-primaria: #4CAF50;          // Verde Principal (Sustentabilidade)
-$cor-secundaria: #00897B;        // Verde Água/Ciano (Tecnologia/Foco)
-$cor-fundo-claro: #F4F7F9;        // Cinza/Azul muito claro (Tecnologia Neutra)
-$cor-fundo-escuro: #2C3E50;      // Azul Marinho Escuro (Rodapé/Contraste)
+$cor-primaria: #4CAF50;          
+$cor-secundaria: #00897B;       
+$cor-fundo-claro: #F4F7F9;      
+$cor-fundo-escuro: #2C3E50;     
 $cor-texto: #333333;
 $cor-texto-claro: #FFFFFF;
-$espacamento-base: 1.5rem;      // 24px (Medida Relativa REM)
+$espacamento-base: 1.5rem;      
 
-// Mixin para centralizar o contêiner principal
 @mixin container-base {
     max-width: 1200px;
-    width: 90%; // Medida relativa
+    width: 90%; 
     margin: 0 auto;
 }
 
-// Reset Básico
 * {
     box-sizing: border-box;
     margin: 0;
@@ -28,7 +25,6 @@ body {
     background-color: $cor-texto-claro;
 }
 
-// Classes base
 .container {
     @include container-base;
 }
@@ -56,8 +52,7 @@ body {
 }
 
 .secao {
-    padding: $espacamento-base * 3 0; // Padding com medida relativa (REM)
-    text-align: center;
+    padding: $espacamento-base * 3 0; 
 }
 .subtitulo-secao {
     font-size: 1.1rem;
@@ -65,15 +60,13 @@ body {
     margin-bottom: $espacamento-base * 2;
 }
 
-
-// --- CABEÇALHO ---
 .cabecalho {
     background-color: $cor-fundo-claro;
     padding: $espacamento-base * 0.5 0;
     
     &__conteudo {
-        display: flex; // Habilita Flexbox
-        justify-content: space-between; // Espaço entre logo/nav e botão
+        display: flex; 
+        justify-content: space-between; 
         align-items: center;
 
         .logo {
@@ -86,7 +79,7 @@ body {
 
         .menu {
             list-style: none;
-            display: flex; // Menu interno: Flexbox
+            display: flex; 
             
             li a {
                 text-decoration: none;
@@ -103,23 +96,21 @@ body {
             margin-right: $espacamento-base;
         }
         
-        // Esconde o menu de navegação em telas menores (Mobile First)
         .cabecalho__navegacao {
             display: none;
         }
     }
 }
 
-// --- SEÇÃO HERO ---
 .secao--hero {
     background-color: $cor-fundo-claro;
     padding: $espacamento-base * 4 0;
     
     .hero__conteudo {
-        display: flex; // Alinha texto e imagem
+        display: flex; 
         align-items: center;
         text-align: left;
-        flex-direction: column; // Inicia em coluna (Mobile)
+        flex-direction: column; 
     }
 
     .hero__texto {
@@ -136,7 +127,7 @@ body {
 
     .hero__botoes {
         display: flex;
-        gap: $espacamento-base; // Espaçamento entre botões
+        gap: $espacamento-base; 
         margin-top: $espacamento-base;
     }
 
@@ -148,7 +139,6 @@ body {
     }
 }
 
-// --- ESTATÍSTICAS ---
 .secao--estatisticas {
     background-color: $cor-texto-claro;
     padding: $espacamento-base * 2 0;
@@ -157,11 +147,11 @@ body {
         display: flex;
         justify-content: space-around;
         align-items: center;
-        flex-wrap: wrap; // Garante quebra de linha em telas pequenas
+        flex-wrap: wrap; 
     }
 
     .estatistica {
-        flex-basis: 30%; // Cada item ocupa 30%
+        flex-basis: 30%; 
         padding: $espacamento-base;
         text-align: center;
 
@@ -176,28 +166,27 @@ body {
     }
 }
 
-// --- COMO FUNCIONA ---
 .secao--funciona {
     background-color: $cor-fundo-claro;
     
     .funciona__blocos {
         display: flex;
         gap: $espacamento-base * 2;
-        flex-direction: column; // Inicia em coluna (Mobile)
+        flex-direction: column; 
         text-align: left;
     }
     
     .bloco {
-        flex-grow: 1; // Permite que cada bloco cresça
+        flex-grow: 1; 
         padding: $espacamento-base * 1.5;
         border-radius: 8px;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 
         &--doador {
-            background-color: #E6F0FF; // Azul claro
+            background-color: #E6F0FF; 
         }
         &--adquirente {
-            background-color: #E6FFF0; // Verde claro
+            background-color: #E6FFF0; 
         }
         
         h3 {
@@ -215,21 +204,20 @@ body {
     }
 }
 
-// --- PRODUTOS ---
 .secao--produtos {
     .lista-cartoes {
         display: flex;
         gap: $espacamento-base * 1.5;
         justify-content: center;
-        flex-wrap: wrap; // Permite quebra de linha
+        flex-wrap: wrap; 
     }
 
     .cartao {
-        flex-basis: 300px; // Largura mínima para o cartão
+        flex-basis: 300px; 
         max-width: 100%;
         border: 1px solid #eee;
         border-radius: 8px;
-        overflow: hidden; // Recorte da imagem
+        overflow: hidden; 
         text-align: left;
 
         img {
@@ -254,7 +242,6 @@ body {
     }
 }
 
-// --- DEPOIMENTOS ---
 .secao--depoimentos {
     background-color: $cor-fundo-claro;
     
@@ -266,7 +253,7 @@ body {
     }
 
     .depoimento {
-        flex-basis: 30%; // Cada depoimento ocupa 30%
+        flex-basis: 30%; 
         padding: $espacamento-base;
         background-color: $cor-texto-claro;
         border-left: 5px solid $cor-primaria;
@@ -289,7 +276,6 @@ body {
     }
 }
 
-// --- CTA FINAL ---
 .secao--cta {
     background-color: $cor-texto-claro;
     
@@ -314,7 +300,6 @@ body {
     }
 }
 
-// --- RODAPÉ ---
 .rodape {
     background-color: $cor-fundo-escuro;
     color: $cor-texto-claro;
@@ -323,12 +308,12 @@ body {
     .rodape__conteudo {
         display: flex;
         justify-content: space-between;
-        flex-direction: column; // Inicia em coluna (Mobile)
+        flex-direction: column; 
         gap: $espacamento-base * 2;
     }
     
     .rodape__info, .rodape__redes {
-        text-align: center; // Centraliza no mobile
+        text-align: center; 
         h3, h4 {
             font-family: 'Poppins', sans-serif;
             margin-bottom: $espacamento-base * 0.5;
@@ -336,19 +321,17 @@ body {
     }
 }
 
-
-// --- RESPONSIVIDADE (Desktop - Acima de 768px) ---
 @media (min-width: 768px) {
     
     .cabecalho__conteudo {
         .cabecalho__navegacao {
-            display: block; // Mostra o menu no Desktop
+            display: block; 
         }
     }
     
     .secao--hero {
         .hero__conteudo {
-            flex-direction: row; // Muda para linha
+            flex-direction: row; 
             justify-content: space-between;
         }
         .hero__texto {
@@ -363,13 +346,13 @@ body {
     
     .secao--funciona {
         .funciona__blocos {
-            flex-direction: row; // Muda para linha
+            flex-direction: row; 
         }
     }
     
     .rodape {
         .rodape__conteudo {
-            flex-direction: row; // Muda para linha
+            flex-direction: row; 
             text-align: left;
         }
         .rodape__info, .rodape__redes {
